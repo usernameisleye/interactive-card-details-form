@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+::placeholder{
+    font-size: 1rem;
+}
+
+main{
+    position: relative;
+    height: 100vh;
+}
+
+main > img{
+    left: 0;
+    width: 30vw;
+    height: 100vh;
+    z-index: -99;
+}
+
+.card-front .hero, .card-back >img{
+    position: relative;
+    width: 25rem;
+}
+.card-front, .card-back{
+    position: absolute;
+    width: fit-content;
+    color: #FFF;
+}
+
+main > img, .card-front .details, .card-back p, .card-inputs, .details p, .others{
+    position: absolute;
+}
+.card-front{
+    top: 5rem;
+    left: 10%;
+}
+
+.card-front .details{
+    top: 0;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+}
+
+.card-front .details p{
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    letter-spacing: .1rem;
+}
+
+.date, .card-inputs, .extras, .inputs, .others{
+    display: flex;
+}
+.others{
+    bottom: 10%;
+}
+
+.others div:last-child{
+}
+
+.card-back{
+    top: 50%;
+    left: 20%;
+}
+
+.card-back p{
+    top: 43%;
+    right: 12%;
+}
+
+.card-inputs{
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: 1rem;
+    width: 30%;
+}
+
+.date{
+    gap: .5rem;
+}
+
+.title{
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card-name, .card-number, .cvc, .exp-date{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.card-name input, .card-number input, .extras input{
+    padding: .5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: .3rem;
+    outline: none;
+}
+
+.extras, .inputs{
+    gap: .5rem;
+}
+
+.inputs input{
+    width: 5rem;
+}
+
+button{
+    padding: .5rem;
+    background-color: purple;
+    color: #FFF;
+    font-size: 1rem;
+    border: none;
+    border-radius: .3rem;
+    cursor: pointer;
+}
+
+button:hover{
+    filter: brightness(95%);
+}

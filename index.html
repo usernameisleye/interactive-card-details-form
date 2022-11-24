@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Form</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="./script.js" defer></script>
+    <script src="https://kit.fontawesome.com/d39106e7f3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <img src="./images/bg-main-desktop.png" alt="">
+
+        <div class="card-front">
+                <img src="./images/bg-card-front.png" alt="" class="hero">
+
+                <div class="details">
+                        <img src="./images/card-logo.svg" alt="" class="logo">
+                        <p class="card-num">0000 0000 0000 0000</p>
+                    <div class="others">
+                        <div class="name">Patrick Star</div>
+                        <div class="date">
+                            <div class="mm">00</div>
+                            <span>/</span>
+                            <div class="yy">00</div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="card-back">
+            <img src="./images/bg-card-back.png" alt="">
+            <p class="cvc-num">000</p>
+        </div>
+
+        <section class="card-inputs">
+            <div class="card-name">
+                <label class="title" for="name">Cardholder Name</label>
+                <input type="text" id="name" placeholder="e.g. Mark Ruffalo" required>
+            </div>
+
+            <div class="card-number">
+                <label class="title">Card Number</label>
+                <input type="text" placeholder="e.g. 2545 8760 7600 2658" required maxlength="16">
+            </div>
+
+            <div class="extras">
+                <div class="exp-date">
+                    <label class="title">Exp.Date [MM/YY]</label>
+                    <div class="inputs">
+                        <input type="text" class="mm-num" placeholder="MM" required maxlength="2">
+                        <input type="text" class="yy-num" placeholder="YY" required maxlength="2">
+                    </div>
+                </div>
+    
+                <div class="cvc">
+                    <label class="title">CVC</label>
+                    <input type="text" placeholder="e.g. 345" required maxlength="3">
+                </div>
+            </div>
+
+            <button>Confirm</button>
+        </section>
+    </main>
+</body>
+</html>
