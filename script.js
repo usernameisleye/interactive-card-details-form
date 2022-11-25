@@ -15,7 +15,7 @@ const YYNumber = document.querySelector('.yy');
 const YYNumberInput = document.querySelector('.yy-num');
 
 //value change on cvc name
-const cvcInput = document.querySelector('.cvc input');
+const cvcInput = document.getElementById('cvc-input');
 const cvcNum = document.querySelector('.card-back p');
 
 cardNameInput.addEventListener('input', changeName);
@@ -29,7 +29,7 @@ function changeName(){
         const num = cardNameInput.value;
         cardName.innerText = num;
     }else{
-        cardName.innerHTML = 'Patrick Star'
+        cardName.innerHTML = 'Mark Ruffalo'
     }
 }
 
@@ -65,6 +65,7 @@ function changeCVC(){
         const num = cvcInput.value;
         cvcNum.innerText = num;
     }else{
-        cvcNum.innerHTML = '000'
+        cvcNum.innerHTML = '000';
+        cvcNum.classList.toggle('error');
     }
 }
