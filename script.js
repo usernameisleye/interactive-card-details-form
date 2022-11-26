@@ -66,6 +66,7 @@ function changeCVC(){
         cvcNum.innerText = num;
     }else{
         cvcNum.innerHTML = '000';
-        cvcNum.classList.toggle('error');
+        //under maintenance
+        cvcInput.classList.toggle('error');
     }
 }
