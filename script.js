@@ -22,6 +22,7 @@ const cvcNum = document.querySelector('.card-back p');
 const confirmBtn = document.querySelector('.card-inputs button');
 const completeBtn = document.querySelector('.complete button')
 const completePage = document.getElementById('complete');
+const cardInputs = document.querySelector('.card-inputs');
 
 cardNameInput.addEventListener('input', changeName);
 cardNumberInput.addEventListener('input', changeNumber);
@@ -50,6 +51,10 @@ function changeNumber(){
 
 function changeMM(){
     if(MMNumberInput.value != ''){
+        if(isNaN(MMNumberInput.value)){
+            MMNumberInput.value = '';
+        }
+
         const num = MMNumberInput.value;
         MMNumber.innerText = num;
     }else{
@@ -59,6 +64,10 @@ function changeMM(){
 
 function changeYY(){
     if(YYNumberInput.value != ''){
+        if(isNaN(YYNumberInput.value)){
+            YYNumberInput.value = '';
+        }
+
         const num = YYNumberInput.value;
         YYNumber.innerText = num;
     }else{
@@ -67,20 +76,17 @@ function changeYY(){
 }
 
 function changeCVC(){
-    // console.log('hi')
-    console.log(cvcInput.value)
-    if(cvcInput.value != ''){
-        if(isNaN(cvcInput.value)){
-            cvcInput.value = '';
-            if(cvcInput.value != ''){
-                const num = cvcInput.value;
-                cvcNum.innerText = num;
-            }else{
-                cvcNum.innerHTML = '000';
-                //under maintenance
-                cvcInput.classList.toggle('error');
+        if(cvcInput.value != ''){
+            if(isNaN(cvcInput.value)){
+                cvcInput.value = '';
             }
-        }
+
+            const num = cvcInput.value;
+            cvcNum.innerText = num;
+        }else{
+            cvcNum.innerHTML = '000';
+            //under maintenance
+            cvcInput.classList.toggle('error');
     }
 }
 
@@ -90,6 +96,4 @@ function completeInfo(){
 
 function completeReg(){
     completePage.style.display = 'none';
-
-    
 }
