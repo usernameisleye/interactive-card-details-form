@@ -25,6 +25,10 @@ main > img{
     z-index: -99;
 }
 
+.hero-mobile{
+    display: none;
+}
+
 .card-front .hero, .card-back >img{
     position: relative;
     width: 25rem;
@@ -35,7 +39,7 @@ main > img{
     color: #FFF;
 }
 
-main > img, .card-front .details, .card-back p, .card-inputs, .details p{
+main > img, .card-front .details, .card-back p, .card-inputs, .details p, .complete{
     position: absolute;
 }
 .card-front{
@@ -103,18 +107,18 @@ main > img, .card-front .details, .card-back p, .card-inputs, .details p{
 
 .card-name input, .card-number input, .extras input{
     padding: .5rem 1rem;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: .3rem;
     outline: none;
 }
 
-/* .cvc{
-    flex: 1;
-} */
-
 .error{
     border: 1px solid red;
 }
+.card-inputs input{
+    border: 1px solid #ccc;
+}
+
 
 .extras, .inputs{
     gap: .5rem;
@@ -138,20 +142,72 @@ button:hover{
     filter: brightness(95%);
 }
 
+/* complete screen change */
+.complete{
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFF;
+    display: none;
+}
+
+.complete img{
+    width: 5rem;
+    margin-top: 3rem;
+}
+
+.complete button{
+    width: 100%;
+}
+
 @media screen and (max-width: 500px){
+    main{
+        width: 100vw;
+    }
     main > img{
-        top: 0;
-        transform: rotate(90deg);
+        display: none;
+    }
+
+    .hero-mobile{
+        /* display: block;
+        position: absolute;
+        bottom: 33%;
+        right: 0;
+        z-index: -1;
+        width: 120vw; */
+    }
+
+    .card-front .hero, .card-back > img{
+        width: 20rem;
+    }
+
+    .card-back{
+        top: 2%;
+        z-index: -1;
+    }
+
+    .card-front{
+        top: 19%;
+        font-size: .9rem;
+    }
+
+    .card-front .details p{
+        font-size: 1.5rem;
     }
 
     .card-inputs{
-        left: 50%;
-        width: 60%;
-        transform: translateX(-50%);
+        left: 10%;
+        bottom: 50%;
+        width: 80%;
     }
 
-    .card-front .hero, .card-back >img{
-        position: relative;
-        width: 20rem;
+    .cvc input{
+        width: 100%;
     }
 }

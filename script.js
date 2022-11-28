@@ -17,13 +17,19 @@ const YYNumberInput = document.querySelector('.yy-num');
 //value change on cvc name
 const cvcInput = document.getElementById('cvc-input');
 const cvcNum = document.querySelector('.card-back p');
+// const cvcValue = cvcInput.value;
+
+const confirmBtn = document.querySelector('.card-inputs button');
+const completeBtn = document.querySelector('.complete button')
+const completePage = document.getElementById('complete');
 
 cardNameInput.addEventListener('input', changeName);
 cardNumberInput.addEventListener('input', changeNumber);
 MMNumberInput.addEventListener('input', changeMM);
 YYNumberInput.addEventListener('input', changeYY);
 cvcInput.addEventListener('input', changeCVC);
-
+confirmBtn.addEventListener('click', completeInfo)
+completeBtn.addEventListener('click', completeReg)
 function changeName(){
     if(cardNameInput.value != ''){
         const num = cardNameInput.value;
@@ -61,12 +67,29 @@ function changeYY(){
 }
 
 function changeCVC(){
+    // console.log('hi')
+    console.log(cvcInput.value)
     if(cvcInput.value != ''){
-        const num = cvcInput.value;
-        cvcNum.innerText = num;
-    }else{
-        cvcNum.innerHTML = '000';
-        //under maintenance
-        cvcInput.classList.toggle('error');
+        if(isNaN(cvcInput.value)){
+            cvcInput.value = '';
+            if(cvcInput.value != ''){
+                const num = cvcInput.value;
+                cvcNum.innerText = num;
+            }else{
+                cvcNum.innerHTML = '000';
+                //under maintenance
+                cvcInput.classList.toggle('error');
+            }
+        }
     }
+}
+
+function completeInfo(){
+    completePage.style.display = 'flex';
+}
+
+function completeReg(){
+    completePage.style.display = 'none';
+
+    
 }
