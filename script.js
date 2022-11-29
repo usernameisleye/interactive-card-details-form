@@ -31,17 +31,29 @@ YYNumberInput.addEventListener('input', changeYY);
 cvcInput.addEventListener('input', changeCVC);
 confirmBtn.addEventListener('click', completeInfo)
 completeBtn.addEventListener('click', completeReg)
+
 function changeName(){
     if(cardNameInput.value != ''){
         const num = cardNameInput.value;
-        cardName.innerText = num;
+        let savedNum = num.charAt(0).toUpperCase() + num.slice(1);
+        cardName.innerHTML = savedNum;
+
+        const letterSpace = cardName.innerHTML.split(' ');
+
+        for (let i = 0; i < letterSpace.length; i++) {
+            letterSpace[i] = letterSpace[i].charAt(0).toLocaleUpperCase(0) + letterSpace[i].slice(1);
+        }
+
+        const savedLetter = letterSpace.join(' ');
+        cardName.innerHTML = savedLetter
     }else{
         cardName.innerHTML = 'Mark Ruffalo'
     }
 }
 
-function changeNumber(){
+function changeNumber(e){
     if(cardNumberInput.value != ''){
+        e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
         const num = cardNumberInput.value;
         cardNumber.innerText = num;
     }else{
