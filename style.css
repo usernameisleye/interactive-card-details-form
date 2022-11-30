@@ -177,13 +177,15 @@ button:hover{
 
     .card-back{
         top: 2%;
-        z-index: 1;
     }
 
     .card-front{
         top: 19%;
-        font-size: .7rem;
-        z-index: 2;
+        font-size: .8rem;
+        z-index: 1;
+    }
+    .name, .date{
+        padding-bottom: .5rem;
     }
 
     .card-front .details p{
@@ -196,7 +198,17 @@ button:hover{
         width: 80%;
     }
 
+    .title{
+        font-size: .8rem;
+    }
+
     .cvc input{
         width: 100%;
+    }
+
+    .complete{
+        position: relative;
+        top: 32%;
+        /* height: 100%; */
     }
 }
