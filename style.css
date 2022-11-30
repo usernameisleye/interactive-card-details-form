@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 ::placeholder{
@@ -177,14 +177,15 @@ button:hover{
 
     .card-back{
         top: 2%;
-        left: 8%;
+        left: 9%;
         font-size: .8rem;
     }
 
     .card-front{
         top: 19%;
-        left: 4%;
+        left: 6%;
         font-size: .8rem;
+        text-decoration: none;
         z-index: 1;
     }
     .card-front img{
