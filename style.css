@@ -11,6 +11,10 @@
 
 input{
     font-size: 1rem;
+    border: 1px solid #ccc;
+    padding: .5rem 1rem;
+    border-radius: .3rem;
+    outline: none;
 }
 
 main{
@@ -23,10 +27,6 @@ main > img{
     width: 30vw;
     height: 100vh;
     z-index: -99;
-}
-
-.hero-mobile{
-    display: none;
 }
 
 .card-front .hero, .card-back >img{
@@ -105,20 +105,14 @@ main > img, .card-front .details, .card-back p, .card-inputs, .details p, .compl
     gap: .5rem;
 }
 
-.card-name input, .card-number input, .extras input{
-    padding: .5rem 1rem;
-    /* border: 1px solid #ccc; */
-    border-radius: .3rem;
-    outline: none;
-}
-
 .error{
     border: 1px solid red;
-}
-.card-inputs input{
-    border: 1px solid #ccc;
+    font-size: 1rem;
 }
 
+.card-inputs p{
+    color: red;
+}
 
 .extras, .inputs{
     gap: .5rem;
@@ -149,7 +143,7 @@ button:hover{
     top: 50%;
     transform: translateY(-50%);
     width: 30%;
-    height: 45%;
+    height: 50%;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -165,7 +159,7 @@ button:hover{
     width: 100%;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 375px){
     main{
         width: 100vw;
     }
@@ -173,22 +167,27 @@ button:hover{
         display: none;
     }
 
+    .container::before{
+        content: url(./images/bg-main-mobile.png);
+    }
+
     .card-front .hero, .card-back > img{
-        width: 20rem;
+        width: 18rem;
     }
 
     .card-back{
         top: 2%;
-        z-index: -1;
+        z-index: 1;
     }
 
     .card-front{
         top: 19%;
-        font-size: .9rem;
+        font-size: .7rem;
+        z-index: 2;
     }
 
     .card-front .details p{
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .card-inputs, .complete{

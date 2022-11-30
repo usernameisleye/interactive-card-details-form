@@ -15,14 +15,16 @@ const YYNumber = document.querySelector('.yy');
 const YYNumberInput = document.querySelector('.yy-num');
 
 //value change on cvc name
+const cvcMain = document.querySelector('.cvc');
 const cvcInput = document.getElementById('cvc-input');
 const cvcNum = document.querySelector('.card-back p');
-// const cvcValue = cvcInput.value;
 
 const confirmBtn = document.querySelector('.card-inputs button');
 const completeBtn = document.querySelector('.complete button')
 const completePage = document.getElementById('complete');
 const cardInputs = document.querySelector('.card-inputs');
+const allInputs = document.getElementsByTagName('input');
+const errorMsg = document.getElementById('errorMsg');
 
 cardNameInput.addEventListener('input', changeName);
 cardNumberInput.addEventListener('input', changeNumber);
@@ -45,19 +47,26 @@ function changeName(){
         }
 
         const savedLetter = letterSpace.join(' ');
-        cardName.innerHTML = savedLetter
+        cardName.innerHTML = savedLetter;
+        cardNameInput.classList.remove('error');
     }else{
         cardName.innerHTML = 'Mark Ruffalo'
+
+        cardNameInput.classList.add('error');
     }
 }
 
 function changeNumber(e){
+    // let allLetters = /^[A-Za-z]+$/;
     if(cardNumberInput.value != ''){
         e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
         const num = cardNumberInput.value;
         cardNumber.innerText = num;
-    }else{
+        cardNumberInput.classList.remove('error');
+    }
+    else{
         cardNumber.innerHTML = '0000 0000 0000 0000'
+        cardNumberInput.classList.add('error');
     }
 }
 
@@ -69,8 +78,10 @@ function changeMM(){
 
         const num = MMNumberInput.value;
         MMNumber.innerText = num;
+        MMNumberInput.classList.remove('error');
     }else{
-        MMNumber.innerHTML = '00'
+        MMNumber.innerHTML = '00';
+        MMNumberInput.classList.add('error');
     }
 }
 
@@ -82,8 +93,10 @@ function changeYY(){
 
         const num = YYNumberInput.value;
         YYNumber.innerText = num;
+        YYNumberInput.classList.remove('error');
     }else{
         YYNumber.innerText = '00';
+        YYNumberInput.classList.add('error');
     }
 }
 
@@ -95,15 +108,23 @@ function changeCVC(){
 
             const num = cvcInput.value;
             cvcNum.innerText = num;
+            cvcInput.classList.remove('error');
+            // cvcMain.innerHTML = "<p></p>";
         }else{
             cvcNum.innerHTML = '000';
-            //under maintenance
-            cvcInput.classList.toggle('error');
+            cvcInput.classList.add('error');
+            // cvcMain.innerHTML += "<p>Can't be blank</p>";
     }
 }
 
 function completeInfo(){
     completePage.style.display = 'flex';
+
+    for (let i = 0; i < allInputs.length; i++) {
+        if(allInputs[i].type == 'text' || allInputs[i].type == 'number'){
+            allInputs[i].value = '';
+        }
+    }
 }
 
 function completeReg(){
