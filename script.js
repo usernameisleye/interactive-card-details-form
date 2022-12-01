@@ -3,28 +3,35 @@ const cardName = document.querySelector('.name');
 const cardNameInput = document.querySelector('.card-name input');
 
 //value change on card number
+const cardNumberMain = document.querySelector('.card-number');
 const cardNumber = document.querySelector('.card-num');
 const cardNumberInput = document.querySelector('.card-number input');
 
 //value change on mm number
+const MMMain = document.querySelector('.MM');
 const MMNumber = document.querySelector('.mm');
 const MMNumberInput = document.querySelector('.mm-num');
 
 //value change on yy number
+const YYMain = document.querySelector('.YY')
 const YYNumber = document.querySelector('.yy');
 const YYNumberInput = document.querySelector('.yy-num');
 
 //value change on cvc name
 const cvcMain = document.querySelector('.cvc');
-const cvcInput = document.getElementById('cvc-input');
+const cvcInput = document.querySelector('.cvc input');
 const cvcNum = document.querySelector('.card-back p');
 
 const confirmBtn = document.querySelector('.card-inputs button');
 const completeBtn = document.querySelector('.complete button')
-const completePage = document.getElementById('complete');
+const completePage = document.querySelector('.complete');
 const cardInputs = document.querySelector('.card-inputs');
 const allInputs = document.getElementsByTagName('input');
-const errorMsg = document.getElementById('errorMsg');
+
+//creating error messages
+// const errorMsg = document.createElement('p');
+// const msg = document.createTextNode("Can't be blank");
+// errorMsg.appendChild(msg)
 
 cardNameInput.addEventListener('input', changeName);
 cardNumberInput.addEventListener('input', changeNumber);
@@ -63,10 +70,12 @@ function changeNumber(e){
         const num = cardNumberInput.value;
         cardNumber.innerText = num;
         cardNumberInput.classList.remove('error');
+        cardNumberMain.removeChild(errorMsg);
     }
     else{
         cardNumber.innerHTML = '0000 0000 0000 0000'
         cardNumberInput.classList.add('error');
+        cardNumberMain.appendChild(errorMsg);
     }
 }
 
@@ -79,13 +88,18 @@ function changeMM(){
         const num = MMNumberInput.value;
         MMNumber.innerText = num;
         MMNumberInput.classList.remove('error');
+        MMMain.removeChild(errorMsg);
     }else{
         MMNumber.innerHTML = '00';
         MMNumberInput.classList.add('error');
+        MMMain.appendChild(errorMsg);
     }
 }
 
 function changeYY(){
+    const errorMsg = document.createElement('p');
+    const msg = document.createTextNode("Can't be blank");
+    errorMsg.appendChild(msg)
     if(YYNumberInput.value != ''){
         if(isNaN(YYNumberInput.value)){
             YYNumberInput.value = '';
@@ -94,13 +108,19 @@ function changeYY(){
         const num = YYNumberInput.value;
         YYNumber.innerText = num;
         YYNumberInput.classList.remove('error');
+        YYMain.removeChild(errorMsg);
     }else{
         YYNumber.innerText = '00';
         YYNumberInput.classList.add('error');
+        YYMain.appendChild(errorMsg);
     }
 }
 
 function changeCVC(){
+    const errorMsg = document.createElement('p');
+    const msg = document.createTextNode("Can't be blank");
+    errorMsg.appendChild(msg)
+
         if(cvcInput.value != ''){
             if(isNaN(cvcInput.value)){
                 cvcInput.value = '';
@@ -109,16 +129,18 @@ function changeCVC(){
             const num = cvcInput.value;
             cvcNum.innerText = num;
             cvcInput.classList.remove('error');
-            // cvcMain.innerHTML = "<p></p>";
+            cvcMain.removeChild(errorMsg);
         }else{
             cvcNum.innerHTML = '000';
             cvcInput.classList.add('error');
-            // cvcMain.innerHTML += "<p>Can't be blank</p>";
+            cvcMain.appendChild(errorMsg);
     }
 }
 
 function completeInfo(){
+    cardInputs.style.display = 'none';
     completePage.style.display = 'flex';
+
 
     for (let i = 0; i < allInputs.length; i++) {
         if(allInputs[i].type == 'text' || allInputs[i].type == 'number'){
@@ -129,4 +151,12 @@ function completeInfo(){
 
 function completeReg(){
     completePage.style.display = 'none';
+    cardInputs.style.display = 'flex';
+}
+
+//under maintenanace
+for (let i = 0; i < allInputs.length; i++) {
+    if(allInputs[i].focus()){
+        allInputs[i].classList.toggle('active')
+    }
 }

@@ -56,9 +56,7 @@ main > img, .card-front .details, .card-back p, .card-inputs, .details p, .compl
 
 .card-front .details p{
     top: 50%;
-    font-size: 1.9rem;
-    text-align: center;
-    letter-spacing: .1rem;
+    font-size: 2rem;
 }
 
 .date, .card-inputs, .extras, .inputs, .others{
@@ -110,8 +108,13 @@ main > img, .card-front .details, .card-back p, .card-inputs, .details p, .compl
     font-size: 1rem;
 }
 
+.active{
+    border: 1px solid hsl(278, 94%, 30%);
+}
+
 .card-inputs p{
     color: red;
+    font-size: .7rem;
 }
 
 .extras, .inputs{
@@ -143,7 +146,7 @@ button:hover{
     top: 50%;
     transform: translateY(-50%);
     width: 30%;
-    height: 50%;
+    height: 45%;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -185,7 +188,6 @@ button:hover{
         top: 19%;
         left: 6%;
         font-size: .8rem;
-        text-decoration: none;
         z-index: 1;
     }
     .card-front img{
@@ -193,7 +195,8 @@ button:hover{
     }
 
     .card-front .details p{
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+        text-decoration: none;
     }
 
     .card-inputs, .complete{
