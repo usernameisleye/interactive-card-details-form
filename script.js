@@ -1,4 +1,5 @@
 //value change on cardholder name
+const cardNameMain = document.querySelector('.card-name');
 const cardName = document.querySelector('.name');
 const cardNameInput = document.querySelector('.card-name input');
 
@@ -31,14 +32,14 @@ const allInputs = document.getElementsByTagName('input');
 //creating error messages
 const errorMsg = document.createElement('p');
 const msg = document.createTextNode("Can't be blank");
-errorMsg.appendChild(msg)
+errorMsg.appendChild(msg);
 
 cardNameInput.addEventListener('input', changeName);
 cardNumberInput.addEventListener('input', changeNumber);
 MMNumberInput.addEventListener('input', changeMM);
 YYNumberInput.addEventListener('input', changeYY);
 cvcInput.addEventListener('input', changeCVC);
-confirmBtn.addEventListener('click', completeInfo)
+confirmBtn.addEventListener('click', confirmInfo)
 completeBtn.addEventListener('click', completeReg)
 
 function changeName(){
@@ -56,15 +57,16 @@ function changeName(){
         const savedLetter = letterSpace.join(' ');
         cardName.innerHTML = savedLetter;
         cardNameInput.classList.remove('error');
+        cardNameMain.removeChild(errorMsg);
     }else{
         cardName.innerHTML = 'Mark Ruffalo'
 
         cardNameInput.classList.add('error');
+        cardNameMain.appendChild(errorMsg);
     }
 }
 
 function changeNumber(e){
-    // let allLetters = /^[A-Za-z]+$/;
     if(cardNumberInput.value != ''){
         e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
         const num = cardNumberInput.value;
@@ -115,8 +117,6 @@ function changeYY(){
 }
 
 function changeCVC(){
-    errorMsg.appendChild(msg)
-
         if(cvcInput.value != ''){
             if(isNaN(cvcInput.value)){
                 cvcInput.value = '';
@@ -133,15 +133,14 @@ function changeCVC(){
     }
 }
 
-function completeInfo(){
-    cardInputs.style.display = 'none';
-    completePage.style.display = 'flex';
-
-
-    for (let i = 0; i < allInputs.length; i++) {
-        if(allInputs[i].type == 'text' || allInputs[i].type == 'number'){
-            allInputs[i].value = '';
-        }
+function confirmInfo(){
+    if(cardNumberInput.value.length == 19 && MMNumberInput.value.length, YYNumberInput.value.length == 2 && cvcInput.value.length == 3){
+        cardInputs.style.display = 'none';
+        completePage.style.display = 'flex';
+    
+        window.location.reload();
+    }else{
+        alert('Completely fill in all fields');
     }
 }
 
@@ -152,7 +151,7 @@ function completeReg(){
 
 //under maintenanace
 for (let i = 0; i < allInputs.length; i++) {
-    if(allInputs[i].focus()){
-        allInputs[i].classList.toggle('active')
-    }
+    // if(allInputs[i].focus()){
+    //     allInputs[i].classList.toggle('active')
+    // }
 }
