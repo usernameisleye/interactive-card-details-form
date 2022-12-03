@@ -29,9 +29,9 @@ const cardInputs = document.querySelector('.card-inputs');
 const allInputs = document.getElementsByTagName('input');
 
 //creating error messages
-// const errorMsg = document.createElement('p');
-// const msg = document.createTextNode("Can't be blank");
-// errorMsg.appendChild(msg)
+const errorMsg = document.createElement('p');
+const msg = document.createTextNode("Can't be blank");
+errorMsg.appendChild(msg)
 
 cardNameInput.addEventListener('input', changeName);
 cardNumberInput.addEventListener('input', changeNumber);
@@ -97,8 +97,6 @@ function changeMM(){
 }
 
 function changeYY(){
-    const errorMsg = document.createElement('p');
-    const msg = document.createTextNode("Can't be blank");
     errorMsg.appendChild(msg)
     if(YYNumberInput.value != ''){
         if(isNaN(YYNumberInput.value)){
@@ -117,8 +115,6 @@ function changeYY(){
 }
 
 function changeCVC(){
-    const errorMsg = document.createElement('p');
-    const msg = document.createTextNode("Can't be blank");
     errorMsg.appendChild(msg)
 
         if(cvcInput.value != ''){
