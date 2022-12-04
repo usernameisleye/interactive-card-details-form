@@ -121,10 +121,6 @@ main > img, .card-front .details, .card-back p, .card-inputs, .details p, .compl
     gap: .5rem;
 }
 
-/* .cvc{
-    margin-left: 2rem;
-} */
-
 .inputs input{
     width: 5rem;
 }

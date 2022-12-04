@@ -148,10 +148,3 @@ function completeReg(){
     completePage.style.display = 'none';
     cardInputs.style.display = 'flex';
 }
-
-//under maintenanace
-for (let i = 0; i < allInputs.length; i++) {
-    // if(allInputs[i].focus()){
-    //     allInputs[i].classList.toggle('active')
-    // }
-}
