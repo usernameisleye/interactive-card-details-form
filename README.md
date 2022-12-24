@@ -28,8 +28,7 @@ Users should be able to:
   - The card number, expiry date, or CVC fields are in the wrong format
 - View the optimal layout depending on their device's screen size
 ### Screenshot
-
-![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/Valentine/Pictures/Screenshots/Screenshot%20%2887%29.png?version%3D1671897698235)
+![Screenshot (87)](https://user-images.githubusercontent.com/114527354/209443713-4b6266ee-2858-4ca7-a4dc-7b489ce354de.png)
 
 
 ### Links
