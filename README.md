@@ -38,7 +38,6 @@ Users should be able to:
 - Live Site URL: [https://usernameisleye.github.io/interactive-card-details-form/]
 
 ## My process
-I started with the HTML file, then I went on to design CSS for PC+ screens and later I added media query for mobile. I continued with the JavaScript which took most of the development time.
 
 ### Built with
 
