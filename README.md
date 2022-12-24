@@ -29,15 +29,16 @@ Users should be able to:
 - View the optimal layout depending on their device's screen size
 ### Screenshot
 
-![](./screenshot.jpg)
+![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/Valentine/Pictures/Screenshots/Screenshot%20%2887%29.png?version%3D1671897698235)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/usernameisleye/interactive-card-details-form]
+- Live Site URL: [https://usernameisleye.github.io/interactive-card-details-form/]
 
 ## My process
+I started with the HTML file, then I went on to design CSS for PC+ screens and later I added media query for mobile. I continued with the JavaScript which took most of the development time.
 
 ### Built with
 
