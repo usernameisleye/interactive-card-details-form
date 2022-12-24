@@ -67,7 +67,5 @@ Much work is needed in writing my JavaScript, going deeper into its major sector
 - [https://fonts.google.com/] - This provided me with the beautiful fonts I used for the development of this project.
 
 ## Author
-
-- Website - [Adesida Adeleye]
 - Frontend Mentor - [@usernameisleye](https://www.frontendmentor.io/profile/usernameisleye)
 - Twitter - [@usernameistripp](https://twitter.com/usernameistripp)
