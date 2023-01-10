@@ -36,8 +36,6 @@ Users should be able to:
 - Solution URL: [https://github.com/usernameisleye/interactive-card-details-form]
 - Live Site URL: [https://usernameisleye.github.io/interactive-card-details-form/]
 
-## My process
-
 ### Built with
 
 - Semantic HTML5 markup
